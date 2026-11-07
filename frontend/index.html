@@ -1,0 +1,239 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="SafeLink Checker - Analyze URLs and identify potential security threats.">
+
+    <title>SafeLink Checker | URL Security Scanner</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="js/app.js" defer></script>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header class="navbar">
+
+        <div class="brand">
+            <div class="brand-icon">S</div>
+
+            <span>SafeLink<span class="brand-highlight">.</span></span>
+        </div>
+
+        <nav class="nav-links">
+            <a href="#scanner">Scanner</a>
+            <a href="#history">History</a>
+            <a href="#about">About</a>
+        </nav>
+
+        <div class="system-status">
+            <span class="status-dot"></span>
+            System Online
+        </div>
+
+    </header>
+
+
+    <!-- Main Content -->
+    <main class="container">
+
+        <!-- Hero Section -->
+        <section class="hero">
+
+            <div class="hero-badge">
+                <span class="status-dot"></span>
+                ADVANCED URL THREAT DETECTION
+            </div>
+
+            <h1>
+                Browse smarter.<br>
+                <span>Stay protected.</span>
+            </h1>
+
+            <p>
+                Analyze suspicious URLs, identify potential threats,
+                and understand website security before you click.
+            </p>
+
+        </section>
+
+
+        <!-- URL Scanner -->
+        <section class="scanner-card" id="scanner">
+
+            <div class="section-heading">
+
+                <div>
+                    <span class="eyebrow">URL ANALYSIS</span>
+                    <h2>Check a website</h2>
+                </div>
+
+                <span class="scanner-icon">⌕</span>
+
+            </div>
+
+
+            <form id="scanForm">
+
+                <label for="urlInput">Website URL</label>
+
+                <div class="input-wrapper">
+
+                    <span class="input-icon">↗</span>
+
+                    <input
+                        type="text"
+                        id="urlInput"
+                        placeholder="https://example.com"
+                        autocomplete="url"
+                        required
+                    >
+
+                    <button type="submit" id="scanButton">
+                        Scan URL
+                    </button>
+
+                </div>
+
+                <p class="input-hint">
+                    Enter a complete HTTP or HTTPS URL to begin analysis.
+                </p>
+
+            </form>
+
+
+            <!-- Scanning Status -->
+            <div id="loadingState" class="loading-state hidden">
+
+                <div class="loader"></div>
+
+                <p>Analyzing URL security...</p>
+
+            </div>
+
+
+            <!-- Error Message -->
+            <div id="errorMessage" class="error-message hidden"></div>
+
+        </section>
+
+
+        <!-- Scan Results -->
+        <section id="resultSection" class="result-section hidden">
+
+            <div class="section-heading">
+                <div>
+                    <span class="eyebrow">ANALYSIS REPORT</span>
+                    <h2>Scan Results</h2>
+                </div>
+            </div>
+
+            <div class="result-card">
+
+                <div class="risk-overview">
+
+                    <div class="risk-score">
+                        <span id="riskScore">0</span>
+                        <small>/100</small>
+                    </div>
+
+                    <div class="risk-details">
+
+                        <span class="eyebrow">SECURITY ASSESSMENT</span>
+
+                        <h3 id="riskLevel">Low Risk</h3>
+
+                        <p id="scannedUrl"></p>
+
+                    </div>
+
+                </div>
+
+                <div class="result-divider"></div>
+
+                <h3>Security Findings</h3>
+
+                <div id="findingsList" class="findings-list"></div>
+
+                <button id="threatIntelButton" class="secondary-button">
+                    Check with VirusTotal
+                </button>
+
+                <div id="threatIntelResult" class="threat-intel-result hidden"></div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Scan History -->
+        <section id="history" class="history-section">
+
+            <div class="section-heading">
+
+                <div>
+                    <span class="eyebrow">YOUR ACTIVITY</span>
+                    <h2>Recent Scans</h2>
+                </div>
+
+                <button id="refreshHistory" class="refresh-button">
+                    ↻ Refresh
+                </button>
+
+            </div>
+
+            <div id="historyList" class="history-list">
+
+                <p class="empty-state">
+                    Your recent scans will appear here.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- About Section -->
+        <section id="about" class="about-section">
+
+            <span class="eyebrow">ABOUT SAFELINK</span>
+
+            <h2>Security starts with awareness.</h2>
+
+            <p>
+                SafeLink Checker combines heuristic URL analysis
+                with external threat intelligence to help identify
+                potentially suspicious websites.
+            </p>
+
+            <p class="disclaimer">
+                Risk scores are indicators, not guarantees of website safety.
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+
+        <p>
+            © 2026 SafeLink Checker. Built for a safer web.
+        </p>
+
+        <span>Powered by Python & FastAPI</span>
+
+    </footer>
+
+</body>
+
+</html>
